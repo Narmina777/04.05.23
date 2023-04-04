@@ -1,32 +1,67 @@
-# Prerequisites
-*.d
+using System;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void BubbleSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++) 
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+                    
+            }
+        }
 
-# Precompiled Headers
-*.gch
-*.pch
+        static void BubbleSort(long[] arr)
+        {
+            long n = arr.Length;
+            for (long i = 0; i < n - 1; i++)
+            {
+                for (long j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        long temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+            }
+        }
 
-# Fortran module files
-*.mod
-*.smod
+        static void printArray(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; ++i)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
+        }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
-# Executables
-*.exe
-*.out
-*.app
+    }
+
+    //public class CollectionSorter
+    //{
+
+    //    public int[] Sort(int[] array, bool ascending = true)
+    //    {
+    //        if (ascending)
+    //            Array.Sort(array);
+    //        else
+    //            Array.Sort(array, (a, b) => b.CompareTo(a));
+    //        return array;
+    //    }
+
+    //}
+}
